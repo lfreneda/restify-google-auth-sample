@@ -1,6 +1,7 @@
-actions = require './actions'
+generateGoogleAuthenticationUrl = require './actions/generateGoogleAuthenticationUrl'
+authenticateWithGoogle = require './actions/authenticateWithGoogle'
 
 module.exports =
   config: (server) ->
-    server.get '/google-redirect-and-authenticate', actions.authenticateRedirect
-    server.get '/google-authenticate', actions.authenticateWithGoogle
+    server.get '/google-generate-authenticate-url', generateGoogleAuthenticationUrl
+    server.get '/google-authenticate', authenticateWithGoogle

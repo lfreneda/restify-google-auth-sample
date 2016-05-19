@@ -3,6 +3,7 @@ OAuth2 = require('googleapis').auth.OAuth2
 request = require 'request'
 
 module.exports = (req, res, next) ->
+  
     oauth2Client = new OAuth2(config.CLIENT_ID, config.CLIENT_SECRET, config.REDIRECT_URL)
     oauth2Client.getToken req.params.code, (err, tokens) ->
       next.ifError err

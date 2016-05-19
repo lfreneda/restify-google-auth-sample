@@ -2,4 +2,5 @@ actions = require './actions'
 
 module.exports =
   config: (server) ->
-    server.post '/google-authenticate', actions.authenticateWithGoogle
+    server.get '/google-redirect-and-authenticate', actions.authenticateRedirect
+    server.get '/google-authenticate', actions.authenticateWithGoogle

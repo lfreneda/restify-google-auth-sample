@@ -23,4 +23,5 @@ routes.forEach (route) -> route.config server
 
 server.listen process.env.PORT or 9876, () ->
   console.log '%s is listening at %s', server.name, server.url
+  console.log 'browse http://localhost:9876/google-redirect-and-authenticate :)'
 
